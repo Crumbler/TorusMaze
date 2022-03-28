@@ -1,0 +1,48 @@
+#version 330 core
+
+layout(location = 0) in vec2 position;
+layout(location = 1) in vec3 vColor;
+layout(location = 2) in vec2 rectCoord;
+
+out vec3 fColor;
+out vec2 fRectCoord;
+
+uniform float time;
+uniform float innerR;
+uniform float outerR;
+uniform mat4 transMat;
+uniform mat4 projMat;
+uniform mat4 viewMat;
+
+mat3 rotateY(float angle)
+{
+    float s = sin(angle);
+    float c = cos(angle);
+
+    return mat3(c,    0.0f, -s,
+                0.0f, 1.0f, 0.0f,
+                s,    0.0f, c);
+}
+
+vec4 genTorusVertex(in float baseAngle, in float endAngle)
+{
+    const float rOffset = 0.01f;
+    vec3 base = vec3(innerR * sin(baseAngle), 0.0f, innerR * cos(baseAngle)),
+         end = vec3(0.0f, (outerR + rOffset) * sin(endAngle), (outerR + rOffset) * cos(endAngle));
+
+    end = rotateY(baseAngle) * end;
+
+    vec3 res = base + end;
+
+    float dY = 0.0 * sin(atan(res.x, res.z) * 4.0 + time * 0.01) * 0.2;
+
+    return projMat * viewMat * transMat * vec4(res + vec3(0.0, dY, 0.0), 1.0f);
+}
+
+void main()
+{
+    fColor = vColor;
+    fRectCoord = rectCoord;
+
+    gl_Position = genTorusVertex(position.x, position.y);
+}

@@ -1,0 +1,13 @@
+#version 330 core
+
+in float isWallParam;
+
+out vec3 outColor;
+
+void main()
+{
+    if (isWallParam == 0.0f)
+        discard;
+
+    outColor = vec3(0.0);
+}

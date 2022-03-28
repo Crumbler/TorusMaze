@@ -1,0 +1,13 @@
+#version 330 core
+
+in vec3 fColor;
+in vec2 fRectCoord;
+
+out vec3 outColor;
+
+void main()
+{
+    if (length(fRectCoord) > 0.75f)
+        discard;
+    outColor = fColor;
+}

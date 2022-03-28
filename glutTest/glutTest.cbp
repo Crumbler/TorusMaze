@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="glutTest" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/glutTest" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/glutTest" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../glutTest" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=gnu++17" />
+			<Add option="-m64" />
+			<Add option="-DFREEGLUT_STATIC" />
+			<Add option="-DGLEW_STATIC" />
+			<Add option="-DGLM_FORCE_RADIANS" />
+			<Add directory="D:/Programs/CodeBlocks/MinGW/include" />
+		</Compiler>
+		<Linker>
+			<Add option="-static" />
+			<Add option="-m64" />
+			<Add library="freeglut_static" />
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="winmm" />
+			<Add library="gdi32" />
+			<Add library="D:/Programs/CodeBlocks/MinGW/lib/glew32s.lib" />
+			<Add directory="D:/Programs/CodeBlocks/MinGW/lib" />
+		</Linker>
+		<Unit filename="fShader.txt" />
+		<Unit filename="include/Camera.hpp" />
+		<Unit filename="include/Constants.hpp" />
+		<Unit filename="include/Entity.hpp" />
+		<Unit filename="include/Loader.hpp" />
+		<Unit filename="include/Maths.hpp" />
+		<Unit filename="include/Maze.hpp" />
+		<Unit filename="include/RawModel.hpp" />
+		<Unit filename="include/Renderer.hpp" />
+		<Unit filename="include/ShaderInfo.hpp">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="include/ShaderProgram.hpp" />
+		<Unit filename="include/StaticShader.hpp" />
+		<Unit filename="include/TorusLinesShader.hpp" />
+		<Unit filename="include/TorusShader.hpp" />
+		<Unit filename="include/TorusSpotEntity.hpp" />
+		<Unit filename="include/TorusSpotShader.hpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/Camera.cpp" />
+		<Unit filename="src/Constants.cpp" />
+		<Unit filename="src/Entity.cpp" />
+		<Unit filename="src/Loader.cpp" />
+		<Unit filename="src/Maths.cpp" />
+		<Unit filename="src/Maze.cpp" />
+		<Unit filename="src/RawModel.cpp" />
+		<Unit filename="src/Renderer.cpp" />
+		<Unit filename="src/ShaderProgram.cpp" />
+		<Unit filename="src/StaticShader.cpp" />
+		<Unit filename="src/TorusLinesShader.cpp" />
+		<Unit filename="src/TorusShader.cpp" />
+		<Unit filename="src/TorusSpotEntity.cpp" />
+		<Unit filename="src/TorusSpotShader.cpp" />
+		<Unit filename="torusFShader.txt" />
+		<Unit filename="torusLinesFShader.txt" />
+		<Unit filename="torusLinesGShader.txt" />
+		<Unit filename="torusLinesVShader.txt" />
+		<Unit filename="torusSpotFShader.txt" />
+		<Unit filename="torusSpotVShader.txt" />
+		<Unit filename="torusVShader.txt" />
+		<Unit filename="vShader.txt" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
